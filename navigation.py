@@ -1,6 +1,7 @@
 import create_delete_message as cm
 import load_save_message as lm
 import list_message as lst
+import read_update_message as rm
 
 
 def main():
@@ -13,11 +14,11 @@ def main():
         '3' - изменить запись
         '4' - удалить запись
         '5' - просмотреть все записи
-        '6' - выход:   """)
+        '6' - выход:  \n """)
         if choice == "1":
            cm.create_message()
         if choice == "2":
-            pass
+            rm.read_note()
         if choice == "3":
             pass
         if choice == "4":
