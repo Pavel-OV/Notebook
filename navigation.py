@@ -1,27 +1,34 @@
+import create_delete_message as cm
+import load_save_message as lm
+import list_message as lst
+
+
 def main():
     global message
-    # message = load_message()
+    message = lm.load_message()
     while True:
         choice = input("""Выбери действие, нажми
         '1' - создание новой записи
-        '1' - просмотр  запись
-        '1' - изменить запись
-        '1' - удалить запись
-        '1' - просмотреть все записи
-        '1' - выход
-        """)
+        '2' - просмотр  записи
+        '3' - изменить запись
+        '4' - удалить запись
+        '5' - просмотреть все записи
+        '6' - выход:   """)
         if choice == "1":
+           cm.create_message()
+        if choice == "2":
             pass
-        if choice == "1":
+        if choice == "3":
             pass
-        if choice == "1":
-            pass
-        if choice == "1":
-            pass
-        if choice == "1":
-            pass
-        if choice == "1":
-            pass
-        else:
-            print("Не правильно выбрана команда")
+        if choice == "4":
+            cm.delete_message()
+        if choice == "5":
+            lst.list_message()
+        if choice == "6":
+            break
+
+
+        # else:
+        #     print("Не правильно выбрана команда")
+       
 
