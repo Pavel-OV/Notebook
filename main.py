@@ -1,4 +1,4 @@
-from class_notes import *
+import class_notes as cn
 import navigation as nav
 
 
@@ -14,4 +14,4 @@ print( '''Привет! Это твоя записная книжка. Дава�
 
 
 if __name__ == '__main__':
-    nav.main()
+   nav.main()
