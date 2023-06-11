@@ -11,19 +11,20 @@ def create_message():
     msg= cn.Notes(id,heading,note_body,time_of_creation)
     nv.message["notes"].append(msg.to_dict())
     lm.save_message(nv.message)
-    print(f"Запись {heading} создана")
+    print(f"Запись '{heading}' создана")
 
 
 
 def delete_message():
-    indentifier=input("Удалить по заголовку либо по тексту \n")
+    indentifier=input("Удалить по id, по заголовку либо по тексту\n ")
     for notes_elmiment in nv.message["notes"]:
-        if str(notes_elmiment["id"] ) == indentifier or notes_elmiment["note_body"] == indentifier:
+        if indentifier in str(notes_elmiment["id"] ) or indentifier in notes_elmiment["heading"]\
+            or indentifier in notes_elmiment["note_body"]:
             nv.message["notes"].remove(notes_elmiment)
             lm.save_message(nv.message)
-            print(f"Запись '{notes_elmiment['note_body']}' удалена.")
+            print(f"Запись '{notes_elmiment['heading']}' удалена.")
             return
-    print(f"Запись {indentifier} не найдена")
+    print(f"Запись '{indentifier}'не найдена")
 
 
 
