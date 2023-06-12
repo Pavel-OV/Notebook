@@ -17,16 +17,16 @@ class Notes:
         "id": self.id,
         "heading": self.heading,
         "note_body": self.note_body,
-        "time_of_creation":  str(self.time_of_creation),
-        "last_modified_time": str(self.last_modified_time)    }
+        "time_of_creation":  self.time_of_creation,
+        "last_modified_time": self.last_modified_time    }
     @classmethod
     def from_dict(cls,d):
         return cls(
             id= d["id"],
             heading = d["heading"],
             note_body = d["note_body"],
-            time_of_creation = datetime.fromisoformat(d["time_of_creation"]),
-            last_modified_time = d["last_modified_time"],
+            time_of_creation =(d["time_of_creation"]),
+            last_modified_time =(d["last_modified_time"]),
                 )
     
 
