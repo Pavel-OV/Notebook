@@ -25,7 +25,7 @@ def update_message():
             note_body = input(f"Редактируем сообщение ({notes_elmiment['note_body']})  ")
             notes_elmiment["heading"] = heading or notes_elmiment["heading"]
             notes_elmiment["note_body"] = note_body or notes_elmiment["note_body"] 
-            notes_elmiment["last_modified_time"] = str(cn.datetime.now())
+            notes_elmiment["last_modified_time"] = str(cn.datetime.now().strftime('%d-%m-%Y %H:%M:%S'))
             lm.save_message(nv.message)
             print(f"Запись '{notes_elmiment['heading']}'обновлена")
             return
