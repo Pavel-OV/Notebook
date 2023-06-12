@@ -6,9 +6,10 @@ import load_save_message as lm
 def create_message():
     heading = input("heading: "),
     note_body = input("note_body: "),
-    time_of_creation = cn.datetime.now()
+    time_of_creation = cn.datetime.now().strftime('%d-%m-%Y %H:%M:%S')
+    last_modified_time =cn.datetime.now().strftime('%d-%m-%Y %H:%M:%S')
     id = len(nv.message["notes"])+1
-    msg= cn.Notes(id,heading,note_body,time_of_creation)
+    msg= cn.Notes(id,heading,note_body,time_of_creation,last_modified_time)
     nv.message["notes"].append(msg.to_dict())
     lm.save_message(nv.message)
     print(f"Запись '{heading}' создана")
