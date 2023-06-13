@@ -7,6 +7,8 @@ def create_message():
     heading = input("heading: "),
     note_body = input("note_body: "),
     time_of_creation = cn.datetime.now().strftime('%d-%m-%Y %H:%M:%S')
+    # cn.datetime.now().strftime('%d-%m-%Y %H:%M')
+    #  формат создания переменной time_of_creation даты ДД-ММ-ГГ время ЧЧ:ММ 
     last_modified_time =cn.datetime.now().strftime('%d-%m-%Y %H:%M:%S')
     id = len(nv.message["notes"])+1
     msg= cn.Notes(id,heading,note_body,time_of_creation,last_modified_time)
