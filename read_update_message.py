@@ -3,7 +3,7 @@ import navigation as nv
 import load_save_message as lm
 
 def read_note():
-    indentifier=input("Найти ппо id, по заголовку либо по тексту \n")
+    indentifier=input("Найти по id, по заголовку либо по тексту \n")
     for notes_elmiment in nv.message["notes"]:
         if indentifier in str(notes_elmiment["id"] ) or indentifier in notes_elmiment["heading"]\
             or indentifier in notes_elmiment["note_body"]:
@@ -17,7 +17,7 @@ def read_note():
     return  print(f"Такой '{indentifier}' записи нет")
 
 def update_message():
-     indentifier=input("Найти ппо id, по заголовку либо по тексту \n")
+     indentifier=input("Найти по id, по заголовку либо по тексту \n")
      for notes_elmiment in nv.message["notes"]:
         if indentifier in str(notes_elmiment["id"] ) or indentifier in notes_elmiment["heading"]\
             or indentifier in notes_elmiment["note_body"]:
