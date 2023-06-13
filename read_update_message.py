@@ -29,5 +29,5 @@ def update_message():
             lm.save_message(nv.message)
             print(f"Запись '{notes_elmiment['heading']}'обновлена")
             return
-        print(f"Такой '{indentifier}' записи нет")
+     print(f"Такой '{indentifier}' записи нет")
             
