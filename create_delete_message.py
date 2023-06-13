@@ -22,6 +22,8 @@ def delete_message():
         if indentifier in str(notes_elmiment["id"] ) or indentifier in notes_elmiment["heading"]\
             or indentifier in notes_elmiment["note_body"]:
             nv.message["notes"].remove(notes_elmiment)
+            for i, element in enumerate(nv.message["notes"]):
+                element["id"] = i+1
             lm.save_message(nv.message)
             print(f"Запись '{notes_elmiment['heading']}' удалена.")
             return
