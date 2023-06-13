@@ -8,28 +8,39 @@ def main():
     global message
     message = lm.load_message()
     while True:
-        choice = input("""Выбери действие, нажми
-        '1' - создание новой записи
-        '2' - просмотр  записи
-        '3' - изменить запись
-        '4' - удалить запись
-        '5' - просмотреть все записи
-        '6' - выход:  \n """)
-        if choice == "1":
+        choice = command_selection()
+        if choice == 1:
            cm.create_message()
-        if choice == "2":
+        elif choice == 2:
             rm.read_note()
-        if choice == "3":
-            pass
-        if choice == "4":
+        elif choice == 3:
+            rm.update_message()
+        elif choice == 4:
             cm.delete_message()
-        if choice == "5":
+        elif choice == 5:
+            lst.data_note()
+        elif choice == 6:
             lst.list_message()
-        if choice == "6":
+        elif choice == 7:
+            print("Программа закрылась. Жду новых записей.")
             break
+        
+        else:
+            print("Не правильно выбрана команда")
 
 
-        # else:
-        #     print("Не правильно выбрана команда")
+def command_selection():
+    try:
+        choice = int(input("""Выбери действие, нажми
+    '1' - создание новой записи   '2' - просмотр  записи
+    '3' - изменить запись         '4' - удалить запись
+    '5' - поиск по дате создания либо изменения
+    '6' - просмотреть все записи  '7' - выход:  \n """))
+        return choice
+    except ValueError:
+        print('Это должно быть число\n')
+        
+        return command_selection()
+        
        
 
