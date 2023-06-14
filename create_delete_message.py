@@ -4,8 +4,8 @@ import load_save_message as lm
 
 
 def create_message():
-    heading = input("heading: "),
-    note_body = input("note_body: "),
+    heading = input("Заголовок сообщения: "),
+    note_body = input("Наберите сообщение: "),
     time_of_creation = cn.datetime.now().strftime('%d-%m-%Y %H:%M:%S')
     # cn.datetime.now().strftime('%d-%m-%Y %H:%M')
     #  формат создания переменной time_of_creation даты ДД-ММ-ГГ время ЧЧ:ММ 

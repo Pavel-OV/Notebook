@@ -11,7 +11,7 @@ def list_message():
 
 def data_note():
     print("Формат поиска просто число \n дата ЧЧ-ММ-ГГ либо ЧЧ-ММ \n время ЧЧ:ММ ")
-    print("В отсуствии результата поиска появится меню ")
+    print("В отсутствии результата поиска появится меню ")
     indentifier=input("Найти по времени создания либо изменения записи \n")
     for notes_elmiment in nv.message["notes"]:
         if indentifier in str(notes_elmiment["time_of_creation"] ) or indentifier in notes_elmiment["last_modified_time"]:
